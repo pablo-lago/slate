@@ -67,7 +67,7 @@ html, body {
 
 .tocify-wrapper {
   transition: left 0.3s ease-in-out;
-
+  background-color: $nav-bg;
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -89,8 +89,8 @@ html, body {
     }
   }
    img {
-    padding: 20px 100px 19px 20px;
-    background-color: #292929;
+    padding: 20px 112px 19px 20px;
+    background-color: $code-bg;
 
     }
   &>.search {
@@ -196,8 +196,8 @@ html, body {
     background-color: $nav-subitem-bg;
     font-weight: 500;
     .tocify-item>a {
-      padding-left: $nav-padding + $nav-indent;
-      font-size: 12px;
+      font-size: 13px;
+      padding: 6px 20px 6px $nav-padding + $nav-indent;
     }
 
     // for embossed look:
@@ -342,7 +342,7 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
-
+  border-top: 68px solid $code-bg;
   &:after {
     content: '';
     display: block;
@@ -386,11 +386,10 @@ html, body {
   h2 {
     @extend %header-font;
     font-size: 20px;
-    margin-top: 4em;
+    margin-top: 0em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
     padding-top: 1.2em;
-    padding-bottom: 1.2em;
+    padding-bottom: 0.7em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.4), rgba(#fff, 0));
   }
 
@@ -424,7 +423,7 @@ html, body {
     th,td {
       text-align: left;
       vertical-align: top;
-      line-height: 1.6;
+      line-height: 2;
     }
 
     th {
@@ -459,7 +458,7 @@ html, body {
   }
 
   p, li, dt, dd {
-    line-height: 1.6;
+    line-height: 2;
     margin-top: 0;
   }
 
@@ -534,21 +533,19 @@ html, body {
   .doc-title {
     font-size: 30px;
     margin-right: 40%;
-    padding: 65px 28px 0;
+    padding: 65px $main-padding 0;
     box-sizing: border-box;
     display: block;
   }
   pre, blockquote {
-    background-color: $code-bg;
+    background-color: $examples-bg;
     color: #fff;
-
     padding: 0.5em 28px 2em 28px;;
     margin: 0;
     width: $examples-width;
-
     float:right;
     clear:right;
-
+    overflow-x: hidden;
     box-sizing: border-box;
 
     @extend %right-col;
@@ -637,5 +634,5 @@ html, body {
 }
 
 .highlight, .highlight .w {
-  background-color: $code-bg;
+  background-color: $examples-bg;
 }
