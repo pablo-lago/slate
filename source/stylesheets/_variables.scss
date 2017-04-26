@@ -23,12 +23,12 @@ under the License.
 
 // BACKGROUND COLORS
 ////////////////////
-$nav-bg: #fafafa !default;
-$examples-bg: #292929 !default;
-$code-bg: #1c1c1c !default;
-$code-annotation-bg: #1c1c1c !default;
-$nav-subitem-bg: #fafafa !default;
-$nav-active-bg: #fafafa !default;
+$nav-bg: #f6f8fa !default;
+$examples-bg: #263238 !default;
+$code-bg: #263238 !default;
+$code-annotation-bg: #263238 !default;
+$nav-subitem-bg: #f6f8fa !default;
+$nav-active-bg: #f6f8fa !default;
 $lang-select-border: #000 !default;
 $lang-select-bg: #222 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
@@ -76,7 +76,6 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 
 %header-font {
   @extend %default-font;
-  font-weight: normal;
 }
 
 %code-font {
