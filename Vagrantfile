@@ -1,12 +1,18 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.network :forwarded_port, guest: 4567, host: 4567
+  config.ssh.username = "vagrant"
+  config.ssh.password = "vagrant"
 
   config.vm.provision "bootstrap",
     type: "shell",
     inline: <<-SHELL
+      sudo apt-get install python-software-properties
+      sudo apt-add-repository ppa:brightbox/ruby-ng
       sudo apt-get update
-      sudo apt-get install -yq ruby2.0 ruby2.0-dev pkg-config build-essential nodejs git libxml2-dev libxslt-dev
+      sudo apt-get install -yq ruby2.2 ruby2.2-dev pkg-config build-essential nodejs git libxml2-dev libxslt-dev
+      sudo ln -nsf /usr/bin/ruby2.2 /usr/bin/ruby2.0
+      sudo ln -nsf /usr/bin/gem2.2 /usr/bin/gem2.0
       sudo apt-get autoremove -yq
       gem2.0 install --no-ri --no-rdoc bundler
     SHELL
